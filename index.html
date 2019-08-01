@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <style>
+      #usersTable {
+        background-color:cornflowerblue;
+        height: 100px;
+        border: black solid 2px;
+      }
+
+      .lvl1{
+        border: solid green 5px;
+        display: flex;
+      }
+
+      .lvl2{
+        
+        width: 100%;
+        border: solid blue 5px;
+      }
+  </style>
 </head>
 <body>
   <div id="usersTable"></div>
@@ -15,29 +33,38 @@
   //third column is the selector for the DOM element where the table will be rendered
 
   class TableBuilder {
-      constructor(colArr, rowArr, el){
+    constructor(colArr, rowArr, el){
         this.colArr = colArr;
         this.rowArr = rowArr;
         this.el = el;
-      }
-      init() {
-        console.log(this.rowArr);
-      }
+    }
+    init() {
+        
+        let HTML = `<div class = 'lvl1'>`
+        this.colArr.forEach(ele => {
+            HTML += `<div class = "lvl2">${ele.title}</div>`
+        });
+        HTML += `</div>`
+
+        
+
+        document.querySelector(this.el).innerHTML = HTML
+    }
     }
 
   const usersTable = new TableBuilder(
       [
         {
           title: 'Name',
-          key: 'name'
+          //key: 'name'
         },
         {
           title: 'Position',
-          key: 'role'
+          //key: 'role'
         },
         {
           title: 'Salary',
-          key: 'salary',
+          //key: 'salary',
           type: 'number'
         }
 
