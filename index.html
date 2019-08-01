@@ -42,7 +42,7 @@
 
         let HTML = `<div class = 'lvl1'>`
         this.colArr.forEach(ele => {
-            HTML += `<div class = "lvl2">${ele.title}</div>`
+            HTML += `<div class = "lvl2" id="${ele.title}">${ele.title}</div>`
         });
         HTML += `</div>`
         this.rowArr.forEach( ele => {
@@ -58,6 +58,7 @@
 
 
         document.querySelector(this.el).innerHTML = HTML
+
     }
     }
 
