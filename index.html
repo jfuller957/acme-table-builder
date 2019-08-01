@@ -18,7 +18,7 @@
       }
 
       .lvl2{
-        
+
         width: 100%;
         border: solid blue 5px;
       }
@@ -39,14 +39,23 @@
         this.el = el;
     }
     init() {
-        
+
         let HTML = `<div class = 'lvl1'>`
         this.colArr.forEach(ele => {
             HTML += `<div class = "lvl2">${ele.title}</div>`
         });
         HTML += `</div>`
+        this.rowArr.forEach( ele => {
+          HTML += `<div class= 'lvl1'>
+            <div class='lvl2'>${ele.name}</div>
+            <div class='lvl2'>${ele.role}</div>
+            <div class='lvl2'>${ele.salary}</div>
+          </div>`
+        });
 
-        
+        //console.log(this.rowArr);
+
+
 
         document.querySelector(this.el).innerHTML = HTML
     }
