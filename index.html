@@ -14,6 +14,16 @@
   //second parameter is an array with the row data
   //third column is the selector for the DOM element where the table will be rendered
 
+  class TableBuilder {
+      constructor(colArr, rowArr, el){
+        this.colArr = colArr;
+        this.rowArr = rowArr;
+        this.el = el;
+      }
+      init() {
+        console.log(this.rowArr);
+      }
+    }
 
   const usersTable = new TableBuilder(
       [
@@ -57,15 +67,6 @@
       '#usersTable'//id of DOM element
     );
     usersTable.init();
-
-    class TableBuilder {
-      constructor(colArr, rowArr, el){
-
-      }
-      init() {
-
-      }
-    }
 
   </script>
 </body>
